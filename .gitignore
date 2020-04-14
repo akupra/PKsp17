@@ -1,4 +1,6 @@
 .vs
 */obj
-*/bin
 *.user
+*.exe
+*.config
+*.pdb
