@@ -17,7 +17,7 @@ namespace PKsp17
         [Description("Должник")]
         Debetor = 0,
 
-        [Description("Недопущен")]
+        [Description("Не допущен")]
         NotAllowed = 1,
 
         [Description("Допущен")]
