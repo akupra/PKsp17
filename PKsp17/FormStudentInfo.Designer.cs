@@ -55,12 +55,16 @@
             this.tlspImage = new System.Windows.Forms.ToolStrip();
             this.btnSelectImage = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteImage = new System.Windows.Forms.ToolStripButton();
+            this.pnlExercise = new System.Windows.Forms.Panel();
+            this.lblExercise = new System.Windows.Forms.Label();
+            this.txtbxExercise = new System.Windows.Forms.TextBox();
             this.pnlButtons.SuspendLayout();
             this.grbxLaboratories.SuspendLayout();
             this.grbxCourseWork.SuspendLayout();
             this.pnlPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctrbxPhoto)).BeginInit();
             this.tlspImage.SuspendLayout();
+            this.pnlExercise.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtbxName
@@ -85,7 +89,7 @@
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 203);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 295);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(493, 36);
             this.pnlButtons.TabIndex = 4;
@@ -281,7 +285,7 @@
             this.pnlPhoto.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlPhoto.Location = new System.Drawing.Point(359, 0);
             this.pnlPhoto.Name = "pnlPhoto";
-            this.pnlPhoto.Size = new System.Drawing.Size(134, 203);
+            this.pnlPhoto.Size = new System.Drawing.Size(134, 195);
             this.pnlPhoto.TabIndex = 17;
             // 
             // pctrbxPhoto
@@ -292,7 +296,7 @@
             this.pctrbxPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctrbxPhoto.Location = new System.Drawing.Point(0, 25);
             this.pctrbxPhoto.Name = "pctrbxPhoto";
-            this.pctrbxPhoto.Size = new System.Drawing.Size(132, 176);
+            this.pctrbxPhoto.Size = new System.Drawing.Size(132, 168);
             this.pctrbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctrbxPhoto.TabIndex = 2;
             this.pctrbxPhoto.TabStop = false;
@@ -329,22 +333,54 @@
             this.btnDeleteImage.Text = "toolStripButton2";
             this.btnDeleteImage.Click += new System.EventHandler(this.btnDeleteImage_Click);
             // 
+            // pnlExercise
+            // 
+            this.pnlExercise.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlExercise.Controls.Add(this.txtbxExercise);
+            this.pnlExercise.Controls.Add(this.lblExercise);
+            this.pnlExercise.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlExercise.Location = new System.Drawing.Point(0, 195);
+            this.pnlExercise.Name = "pnlExercise";
+            this.pnlExercise.Padding = new System.Windows.Forms.Padding(2);
+            this.pnlExercise.Size = new System.Drawing.Size(493, 100);
+            this.pnlExercise.TabIndex = 18;
+            // 
+            // lblExercise
+            // 
+            this.lblExercise.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblExercise.Location = new System.Drawing.Point(2, 2);
+            this.lblExercise.Name = "lblExercise";
+            this.lblExercise.Size = new System.Drawing.Size(489, 13);
+            this.lblExercise.TabIndex = 0;
+            this.lblExercise.Text = "Задание на защиту";
+            // 
+            // txtbxExercise
+            // 
+            this.txtbxExercise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtbxExercise.Location = new System.Drawing.Point(2, 15);
+            this.txtbxExercise.Multiline = true;
+            this.txtbxExercise.Name = "txtbxExercise";
+            this.txtbxExercise.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtbxExercise.Size = new System.Drawing.Size(489, 83);
+            this.txtbxExercise.TabIndex = 4;
+            // 
             // FormStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(493, 239);
+            this.ClientSize = new System.Drawing.Size(493, 331);
             this.Controls.Add(this.pnlPhoto);
             this.Controls.Add(this.chbxAllLaboratoriesPassed);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cmbxStatus);
             this.Controls.Add(this.grbxCourseWork);
             this.Controls.Add(this.grbxLaboratories);
-            this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtbxName);
             this.Controls.Add(this.lblName);
+            this.Controls.Add(this.pnlExercise);
+            this.Controls.Add(this.pnlButtons);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -362,6 +398,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctrbxPhoto)).EndInit();
             this.tlspImage.ResumeLayout(false);
             this.tlspImage.PerformLayout();
+            this.pnlExercise.ResumeLayout(false);
+            this.pnlExercise.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,5 +433,8 @@
         private System.Windows.Forms.PictureBox pctrbxPhoto;
         private System.Windows.Forms.ToolStripButton btnSelectImage;
         private System.Windows.Forms.ToolStripButton btnDeleteImage;
+        private System.Windows.Forms.Panel pnlExercise;
+        private System.Windows.Forms.TextBox txtbxExercise;
+        private System.Windows.Forms.Label lblExercise;
     }
 }

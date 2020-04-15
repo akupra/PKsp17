@@ -114,6 +114,11 @@ namespace PKsp17
         /// </summary>
         public bool IsReal => this.Id > -1;
 
+        /// <summary>
+        /// Задание на защиту
+        /// </summary>
+        public string Exercise { get; set; }
+
         public Student()
         {
             this.Id = -1;
@@ -127,6 +132,8 @@ namespace PKsp17
             this.MaxCourseWorkMark = Marks.None;
             this.AutoCourseWorkMark = Marks.None;
             this.Status = Statuses.Debetor;
+            this.Exercise = "";
+
             this._photoString = null;
         }
         public Student(string line)
@@ -212,6 +219,7 @@ namespace PKsp17
                 this.AllLaboratoriesPassed = Convert.ToBoolean(n);
             }
             if (items.Length > 11) { this._photoString = items[11]; }
+            if (items.Length > 12) { this.Exercise = items[12]; }
         }
 
         /// <summary>
@@ -221,30 +229,21 @@ namespace PKsp17
         public string ToFileLine()
             => string.Format
             (
-                "{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}",
+                "{0}{1}{2}{1}{3}{1}{4}{1}{5}{1}{6}{1}{7}{1}{8}{1}{9}{1}{10}{1}{11}{1}{12}{1}{13}",
                 this.Id,
                 DataFile.Delimiter,
                 this.Name,
-                DataFile.Delimiter,
                 Convert.ToInt32(this.ViewMark1),
-                DataFile.Delimiter,
                 Convert.ToInt32(this.ViewMark2),
-                DataFile.Delimiter,
                 this.LaboratoriesMark,
-                DataFile.Delimiter,
                 Convert.ToInt32(this.TimelyLaboratories),
-                DataFile.Delimiter,
                 this.CourseWorkBall,
-                DataFile.Delimiter,
                 (int)this.MaxCourseWorkMark,
-                DataFile.Delimiter,
                 this.AutoCourseWorkMark == Marks.None ? "" : ((int)this.AutoCourseWorkMark).ToString(),
-                DataFile.Delimiter,
                 (int)this.Status,
-                DataFile.Delimiter,
                 Convert.ToInt32(this.AllLaboratoriesPassed),
-                DataFile.Delimiter,
-                this._photoString ?? ""
+                this._photoString ?? "",
+                this.Exercise
             );
 
         /// <summary>

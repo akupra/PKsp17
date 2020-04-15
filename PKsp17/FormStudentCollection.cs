@@ -72,6 +72,7 @@ namespace PKsp17
                 this.dgvStudents.Columns["Id"].Visible = false;
                 this.dgvStudents.Columns["Photo"].Visible = false;
                 this.dgvStudents.Columns["IsReal"].Visible = false;
+                this.dgvStudents.Columns["Exercise"].Visible = false;
                 this.dgvStudents.Columns["Name"].HeaderText = "ФИО";
                 this.dgvStudents.Columns["Name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 this.dgvStudents.Columns["ViewMark1"].HeaderText = "Просмотр\n1";

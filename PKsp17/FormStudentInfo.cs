@@ -57,6 +57,8 @@ namespace PKsp17
             this.txtbxCourseWorkBall.Text = this.Student.CourseWorkBall.ToString();
             this.cmbxMaxMark.SelectedItem = this.Student.MaxCourseWorkMark;
             this.cmbxAutoMark.SelectedItem = this.Student.AutoCourseWorkMark;
+
+            this.txtbxExercise.Text = this.Student.Exercise;
         }
 
         /// <summary>
@@ -91,6 +93,8 @@ namespace PKsp17
             this.Student.CourseWorkBall = Convert.ToInt32(this.txtbxCourseWorkBall.Text);
             this.Student.MaxCourseWorkMark = (Marks)this.cmbxMaxMark.SelectedItem;
             this.Student.AutoCourseWorkMark = (Marks)this.cmbxAutoMark.SelectedItem;
+
+            this.Student.Exercise = this.txtbxExercise.Text;
 
             this.Student.Save();
             this.Fill();
