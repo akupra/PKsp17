@@ -56,7 +56,7 @@
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.Location = new System.Drawing.Point(0, 568);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(892, 36);
+            this.pnlButtons.Size = new System.Drawing.Size(894, 36);
             this.pnlButtons.TabIndex = 0;
             // 
             // lblStudentAmount
@@ -74,7 +74,7 @@
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.LightYellow;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRefresh.Location = new System.Drawing.Point(808, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(810, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(80, 30);
             this.btnRefresh.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.btnAddStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddStudent.BackColor = System.Drawing.Color.LightGreen;
             this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddStudent.Location = new System.Drawing.Point(724, 3);
+            this.btnAddStudent.Location = new System.Drawing.Point(726, 3);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(80, 30);
             this.btnAddStudent.TabIndex = 0;
@@ -104,7 +104,7 @@
             this.pnlFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFilter.Location = new System.Drawing.Point(0, 115);
             this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(892, 55);
+            this.pnlFilter.Size = new System.Drawing.Size(894, 55);
             this.pnlFilter.TabIndex = 3;
             // 
             // lblStatus
@@ -173,7 +173,7 @@
             this.dgvStudents.MultiSelect = false;
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.ReadOnly = true;
-            this.dgvStudents.Size = new System.Drawing.Size(892, 398);
+            this.dgvStudents.Size = new System.Drawing.Size(894, 398);
             this.dgvStudents.TabIndex = 4;
             this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             this.dgvStudents.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvStudents_CellFormatting);
@@ -188,7 +188,7 @@
             this.pctrbxLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pctrbxLogo.Location = new System.Drawing.Point(0, 0);
             this.pctrbxLogo.Name = "pctrbxLogo";
-            this.pctrbxLogo.Size = new System.Drawing.Size(892, 115);
+            this.pctrbxLogo.Size = new System.Drawing.Size(894, 115);
             this.pctrbxLogo.TabIndex = 1;
             this.pctrbxLogo.TabStop = false;
             // 
@@ -196,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 604);
+            this.ClientSize = new System.Drawing.Size(894, 604);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.pnlFilter);
             this.Controls.Add(this.pctrbxLogo);

@@ -120,6 +120,7 @@ namespace PKsp17
                     this.Students.Remove(student);
                     this.Fill();
                 }
+                this.PaintStudents();
                 this.dgvStudents.Refresh();
             }
         }
