@@ -27,6 +27,7 @@ namespace PKsp17
             Marks[] marks = (Marks[])Enum.GetValues(typeof(Marks));
             this.cmbxMaxMark.DataSource = marks.Where(c => c != Marks.None).ToList();
             this.cmbxAutoMark.DataSource = marks.ToList();
+            this.cmbxMark.DataSource = marks.ToList();
             #endregion
 
             #region Заполнение комбобокса со статусами
@@ -57,6 +58,7 @@ namespace PKsp17
             this.txtbxCourseWorkBall.Text = this.Student.CourseWorkBall.ToString();
             this.cmbxMaxMark.SelectedItem = this.Student.MaxCourseWorkMark;
             this.cmbxAutoMark.SelectedItem = this.Student.AutoCourseWorkMark;
+            this.cmbxMark.SelectedItem = this.Student.CourseWorkMark;
 
             this.txtbxExercise.Text = this.Student.Exercise;
         }
@@ -93,6 +95,7 @@ namespace PKsp17
             this.Student.CourseWorkBall = Convert.ToInt32(this.txtbxCourseWorkBall.Text);
             this.Student.MaxCourseWorkMark = (Marks)this.cmbxMaxMark.SelectedItem;
             this.Student.AutoCourseWorkMark = (Marks)this.cmbxAutoMark.SelectedItem;
+            this.Student.CourseWorkMark = (Marks)this.cmbxMark.SelectedItem;
 
             this.Student.Exercise = this.txtbxExercise.Text.Replace("\r\n", " ").Replace("\n", " ");
 

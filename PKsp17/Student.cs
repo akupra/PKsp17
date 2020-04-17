@@ -64,6 +64,11 @@ namespace PKsp17
         public Marks AutoCourseWorkMark { get; set; }
 
         /// <summary>
+        /// Оценка за КР
+        /// </summary>
+        public Marks CourseWorkMark { get; set; }
+
+        /// <summary>
         /// Должник или молодец???
         /// </summary>
         public Statuses Status { get; set; }
@@ -218,10 +223,25 @@ namespace PKsp17
                 int.TryParse(items[10], out n);
                 this.AllLaboratoriesPassed = Convert.ToBoolean(n);
             }
-            if (items.Length > 11) { this._photoString = items[11]; }
-            if (items.Length > 12) 
+            if (items.Length > 11)
             {
-                for (int i = 12; i < items.Length; ++i)
+                if (items[11].Length > 0)
+                {
+                    int n = 0;
+                    if (int.TryParse(items[11], out n))
+                    {
+                        this.CourseWorkMark = (Marks)n;
+                    }
+                }
+                else
+                {
+                    this.CourseWorkMark = Marks.None;
+                }
+            }
+            if (items.Length > 12) { this._photoString = items[12]; }
+            if (items.Length > 13) 
+            {
+                for (int i = 13; i < items.Length; ++i)
                 {
                     this.Exercise += items[i] + DataFile.Delimiter;
                 }
@@ -236,7 +256,7 @@ namespace PKsp17
         public string ToFileLine()
             => string.Format
             (
-                "{0}{1}{2}{1}{3}{1}{4}{1}{5}{1}{6}{1}{7}{1}{8}{1}{9}{1}{10}{1}{11}{1}{12}{1}{13}",
+                "{0}{1}{2}{1}{3}{1}{4}{1}{5}{1}{6}{1}{7}{1}{8}{1}{9}{1}{10}{1}{11}{1}{12}{1}{13}{1}{14}",
                 this.Id,
                 DataFile.Delimiter,
                 this.Name,
@@ -249,6 +269,7 @@ namespace PKsp17
                 this.AutoCourseWorkMark == Marks.None ? "" : ((int)this.AutoCourseWorkMark).ToString(),
                 (int)this.Status,
                 Convert.ToInt32(this.AllLaboratoriesPassed),
+                this.CourseWorkMark == Marks.None ? "" : ((int)this.CourseWorkMark).ToString(),
                 this._photoString ?? "",
                 this.Exercise
             );

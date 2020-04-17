@@ -56,8 +56,10 @@
             this.btnSelectImage = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteImage = new System.Windows.Forms.ToolStripButton();
             this.pnlExercise = new System.Windows.Forms.Panel();
-            this.lblExercise = new System.Windows.Forms.Label();
             this.txtbxExercise = new System.Windows.Forms.TextBox();
+            this.lblExercise = new System.Windows.Forms.Label();
+            this.lblMark = new System.Windows.Forms.Label();
+            this.cmbxMark = new System.Windows.Forms.ComboBox();
             this.pnlButtons.SuspendLayout();
             this.grbxLaboratories.SuspendLayout();
             this.grbxCourseWork.SuspendLayout();
@@ -89,7 +91,7 @@
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 295);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 324);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(493, 36);
             this.pnlButtons.TabIndex = 4;
@@ -181,6 +183,8 @@
             // 
             // grbxCourseWork
             // 
+            this.grbxCourseWork.Controls.Add(this.lblMark);
+            this.grbxCourseWork.Controls.Add(this.cmbxMark);
             this.grbxCourseWork.Controls.Add(this.lblAutoMark);
             this.grbxCourseWork.Controls.Add(this.cmbxAutoMark);
             this.grbxCourseWork.Controls.Add(this.lblMaxMark);
@@ -191,7 +195,7 @@
             this.grbxCourseWork.Controls.Add(this.chbxViewMark2);
             this.grbxCourseWork.Location = new System.Drawing.Point(145, 64);
             this.grbxCourseWork.Name = "grbxCourseWork";
-            this.grbxCourseWork.Size = new System.Drawing.Size(209, 130);
+            this.grbxCourseWork.Size = new System.Drawing.Size(209, 154);
             this.grbxCourseWork.TabIndex = 11;
             this.grbxCourseWork.TabStop = false;
             this.grbxCourseWork.Text = "Курсовая работа";
@@ -285,7 +289,7 @@
             this.pnlPhoto.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlPhoto.Location = new System.Drawing.Point(359, 0);
             this.pnlPhoto.Name = "pnlPhoto";
-            this.pnlPhoto.Size = new System.Drawing.Size(134, 195);
+            this.pnlPhoto.Size = new System.Drawing.Size(134, 224);
             this.pnlPhoto.TabIndex = 17;
             // 
             // pctrbxPhoto
@@ -296,7 +300,7 @@
             this.pctrbxPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctrbxPhoto.Location = new System.Drawing.Point(0, 25);
             this.pctrbxPhoto.Name = "pctrbxPhoto";
-            this.pctrbxPhoto.Size = new System.Drawing.Size(132, 168);
+            this.pctrbxPhoto.Size = new System.Drawing.Size(132, 197);
             this.pctrbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctrbxPhoto.TabIndex = 2;
             this.pctrbxPhoto.TabStop = false;
@@ -339,20 +343,11 @@
             this.pnlExercise.Controls.Add(this.txtbxExercise);
             this.pnlExercise.Controls.Add(this.lblExercise);
             this.pnlExercise.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlExercise.Location = new System.Drawing.Point(0, 195);
+            this.pnlExercise.Location = new System.Drawing.Point(0, 224);
             this.pnlExercise.Name = "pnlExercise";
             this.pnlExercise.Padding = new System.Windows.Forms.Padding(2);
             this.pnlExercise.Size = new System.Drawing.Size(493, 100);
             this.pnlExercise.TabIndex = 18;
-            // 
-            // lblExercise
-            // 
-            this.lblExercise.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblExercise.Location = new System.Drawing.Point(2, 2);
-            this.lblExercise.Name = "lblExercise";
-            this.lblExercise.Size = new System.Drawing.Size(489, 13);
-            this.lblExercise.TabIndex = 0;
-            this.lblExercise.Text = "Задание на защиту";
             // 
             // txtbxExercise
             // 
@@ -364,13 +359,40 @@
             this.txtbxExercise.Size = new System.Drawing.Size(489, 83);
             this.txtbxExercise.TabIndex = 4;
             // 
+            // lblExercise
+            // 
+            this.lblExercise.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblExercise.Location = new System.Drawing.Point(2, 2);
+            this.lblExercise.Name = "lblExercise";
+            this.lblExercise.Size = new System.Drawing.Size(489, 13);
+            this.lblExercise.TabIndex = 0;
+            this.lblExercise.Text = "Задание на защиту";
+            // 
+            // lblMark
+            // 
+            this.lblMark.Location = new System.Drawing.Point(3, 127);
+            this.lblMark.Name = "lblMark";
+            this.lblMark.Size = new System.Drawing.Size(127, 21);
+            this.lblMark.TabIndex = 17;
+            this.lblMark.Text = "Финальная оценка";
+            this.lblMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbxMark
+            // 
+            this.cmbxMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxMark.FormattingEnabled = true;
+            this.cmbxMark.Location = new System.Drawing.Point(131, 127);
+            this.cmbxMark.Name = "cmbxMark";
+            this.cmbxMark.Size = new System.Drawing.Size(57, 21);
+            this.cmbxMark.TabIndex = 16;
+            // 
             // FormStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(493, 331);
+            this.ClientSize = new System.Drawing.Size(493, 360);
             this.Controls.Add(this.pnlPhoto);
             this.Controls.Add(this.chbxAllLaboratoriesPassed);
             this.Controls.Add(this.lblStatus);
@@ -436,5 +458,7 @@
         private System.Windows.Forms.Panel pnlExercise;
         private System.Windows.Forms.TextBox txtbxExercise;
         private System.Windows.Forms.Label lblExercise;
+        private System.Windows.Forms.Label lblMark;
+        private System.Windows.Forms.ComboBox cmbxMark;
     }
 }

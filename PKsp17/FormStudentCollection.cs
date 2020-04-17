@@ -83,6 +83,7 @@ namespace PKsp17
                 this.dgvStudents.Columns["CourseWorkBall"].HeaderText = "Балл\nза КР\n(из100)";
                 this.dgvStudents.Columns["MaxCourseWorkMark"].HeaderText = "Максим.\nоценка";
                 this.dgvStudents.Columns["AutoCourseWorkMark"].HeaderText = "Автомат";
+                this.dgvStudents.Columns["CourseWorkMark"].HeaderText = "Конечная\nоценка";
                 this.dgvStudents.Columns["Status"].HeaderText = "Статус";
 
                 //Добавить кнопку "удалить" в каждой строке
@@ -143,6 +144,10 @@ namespace PKsp17
                                                                     : student.MaxCourseWorkMark == Marks.IV ? Color.LightYellow
                                                                     : student.MaxCourseWorkMark == Marks.III ? Color.LightGray
                                                                     : Color.LightCoral;
+                row.Cells["CourseWorkMark"].Style.BackColor = student.CourseWorkMark == Marks.V ? Color.LightGreen
+                                                                    : student.CourseWorkMark == Marks.IV ? Color.LightYellow
+                                                                    : student.CourseWorkMark == Marks.III ? Color.LightGray
+                                                                    : Color.LightCoral;
                 row.Cells["AutoCourseWorkMark"].Style.BackColor = student.AutoCourseWorkMark == Marks.None ? Color.White : Color.LightGreen;
             }
         }
@@ -166,7 +171,11 @@ namespace PKsp17
             {
                 e.Value = student.AutoCourseWorkMark == Marks.None ? "" : student.AutoCourseWorkMark.ToString();
             }
-            else if (dgv.Columns[e.ColumnIndex].Name == "Status")
+            else if (dgv.Columns[e.ColumnIndex].Name == "CourseWorkMark")
+            {
+                e.Value = student.CourseWorkMark == Marks.None ? "" : student.CourseWorkMark.ToString();
+            }
+            else if(dgv.Columns[e.ColumnIndex].Name == "Status")
             {
                 e.Value = student.Status.GetEnumDescription();
             }
