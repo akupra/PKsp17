@@ -94,7 +94,7 @@ namespace PKsp17
             this.Student.MaxCourseWorkMark = (Marks)this.cmbxMaxMark.SelectedItem;
             this.Student.AutoCourseWorkMark = (Marks)this.cmbxAutoMark.SelectedItem;
 
-            this.Student.Exercise = this.txtbxExercise.Text;
+            this.Student.Exercise = this.txtbxExercise.Text.Replace("\r\n", " ").Replace("\n", " ");
 
             this.Student.Save();
             this.Fill();

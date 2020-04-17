@@ -219,7 +219,14 @@ namespace PKsp17
                 this.AllLaboratoriesPassed = Convert.ToBoolean(n);
             }
             if (items.Length > 11) { this._photoString = items[11]; }
-            if (items.Length > 12) { this.Exercise = items[12]; }
+            if (items.Length > 12) 
+            {
+                for (int i = 12; i < items.Length; ++i)
+                {
+                    this.Exercise += items[i] + DataFile.Delimiter;
+                }
+                this.Exercise = this.Exercise.Substring(0, this.Exercise.Length - 1);
+            }
         }
 
         /// <summary>
