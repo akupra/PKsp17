@@ -80,7 +80,7 @@ namespace PKsp17
                 this.dgvStudents.Columns["LaboratoriesMark"].HeaderText = "Баллы\nза лабы\n(6 шт.)";
                 this.dgvStudents.Columns["AllLaboratoriesPassed"].HeaderText = "Сданы\nвсе\nлабы";
                 this.dgvStudents.Columns["TimelyLaboratories"].HeaderText = "Лабы\nсданы\nвовремя\n(6 шт.)";
-                this.dgvStudents.Columns["CourseWorkBall"].HeaderText = "Балл\nза КР\n(из100)";
+                this.dgvStudents.Columns["CourseWorkBall"].HeaderText = "Балл\nза КР\n(из60)";
                 this.dgvStudents.Columns["CourseWorkMark"].HeaderText = "Оценка\nза курсовик";
                 this.dgvStudents.Columns["AutoExamMark"].HeaderText = "Автомат\nза экзамен";
                 this.dgvStudents.Columns["ExamMark"].HeaderText = "Оценка\nза экзамен";
