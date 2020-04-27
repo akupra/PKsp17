@@ -203,7 +203,7 @@
             this.Controls.Add(this.pnlButtons);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStudentCollection";
-            this.Text = "Ведомость по курсовику";
+            this.Text = "Ведомость по прикладному программированию";
             this.pnlButtons.ResumeLayout(false);
             this.pnlFilter.ResumeLayout(false);
             this.pnlFilter.PerformLayout();
