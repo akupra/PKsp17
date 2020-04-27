@@ -81,9 +81,9 @@ namespace PKsp17
                 this.dgvStudents.Columns["AllLaboratoriesPassed"].HeaderText = "Сданы\nвсе\nлабы";
                 this.dgvStudents.Columns["TimelyLaboratories"].HeaderText = "Лабы\nсданы\nвовремя\n(6 шт.)";
                 this.dgvStudents.Columns["CourseWorkBall"].HeaderText = "Балл\nза КР\n(из100)";
-                this.dgvStudents.Columns["MaxCourseWorkMark"].HeaderText = "Максим.\nоценка";
-                this.dgvStudents.Columns["AutoCourseWorkMark"].HeaderText = "Автомат";
-                this.dgvStudents.Columns["CourseWorkMark"].HeaderText = "Конечная\nоценка";
+                this.dgvStudents.Columns["CourseWorkMark"].HeaderText = "Оценка\nза курсовик";
+                this.dgvStudents.Columns["AutoExamMark"].HeaderText = "Автомат\nза экзамен";
+                this.dgvStudents.Columns["ExamMark"].HeaderText = "Оценка\nза экзамен";
                 this.dgvStudents.Columns["Status"].HeaderText = "Статус";
 
                 //Добавить кнопку "удалить" в каждой строке
@@ -140,15 +140,18 @@ namespace PKsp17
                                                     : student.Status == Statuses.NotAllowed ? Color.LightGray
                                                     : Color.White;
 
-                row.Cells["MaxCourseWorkMark"].Style.BackColor = student.MaxCourseWorkMark == Marks.V ? Color.LightGreen
-                                                                    : student.MaxCourseWorkMark == Marks.IV ? Color.LightYellow
-                                                                    : student.MaxCourseWorkMark == Marks.III ? Color.LightGray
+                row.Cells["ExamMark"].Style.BackColor = student.ExamMark == Marks.V ? Color.LightGreen
+                                                                    : student.ExamMark == Marks.IV ? Color.LightYellow
+                                                                    : student.ExamMark == Marks.III ? Color.LightGray
                                                                     : Color.LightCoral;
                 row.Cells["CourseWorkMark"].Style.BackColor = student.CourseWorkMark == Marks.V ? Color.LightGreen
                                                                     : student.CourseWorkMark == Marks.IV ? Color.LightYellow
                                                                     : student.CourseWorkMark == Marks.III ? Color.LightGray
                                                                     : Color.LightCoral;
-                row.Cells["AutoCourseWorkMark"].Style.BackColor = student.AutoCourseWorkMark == Marks.None ? Color.White : Color.LightGreen;
+                row.Cells["AutoExamMark"].Style.BackColor = student.AutoExamMark == Marks.V ? Color.LightGreen
+                                                                    : student.AutoExamMark == Marks.IV ? Color.LightYellow
+                                                                    : student.AutoExamMark == Marks.III ? Color.LightGray
+                                                                    : Color.White;
             }
         }
 
@@ -167,13 +170,17 @@ namespace PKsp17
             DataGridView dgv = sender as DataGridView;
             var student = dgv.Rows[e.RowIndex].DataBoundItem as Student;
 
-            if (dgv.Columns[e.ColumnIndex].Name == "AutoCourseWorkMark")
+            if (dgv.Columns[e.ColumnIndex].Name == "AutoExamMark")
             {
-                e.Value = student.AutoCourseWorkMark == Marks.None ? "" : student.AutoCourseWorkMark.ToString();
+                e.Value = student.AutoExamMark == Marks.None ? "" : student.AutoExamMark.ToString();
             }
             else if (dgv.Columns[e.ColumnIndex].Name == "CourseWorkMark")
             {
                 e.Value = student.CourseWorkMark == Marks.None ? "" : student.CourseWorkMark.ToString();
+            }
+            else if (dgv.Columns[e.ColumnIndex].Name == "ExamMark")
+            {
+                e.Value = student.ExamMark == Marks.None ? "" : student.ExamMark.ToString();
             }
             else if(dgv.Columns[e.ColumnIndex].Name == "Status")
             {

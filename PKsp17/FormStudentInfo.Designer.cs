@@ -41,10 +41,12 @@
             this.lblLaboratoriesMark = new System.Windows.Forms.Label();
             this.grbxLaboratories = new System.Windows.Forms.GroupBox();
             this.grbxCourseWork = new System.Windows.Forms.GroupBox();
+            this.lblMark = new System.Windows.Forms.Label();
+            this.cmbxMark = new System.Windows.Forms.ComboBox();
             this.lblAutoMark = new System.Windows.Forms.Label();
             this.cmbxAutoMark = new System.Windows.Forms.ComboBox();
-            this.lblMaxMark = new System.Windows.Forms.Label();
-            this.cmbxMaxMark = new System.Windows.Forms.ComboBox();
+            this.lblCourseWorkMark = new System.Windows.Forms.Label();
+            this.cmbxCourseWorkMark = new System.Windows.Forms.ComboBox();
             this.txtbxCourseWorkBall = new System.Windows.Forms.TextBox();
             this.lblCourseWorkBall = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.pnlExercise = new System.Windows.Forms.Panel();
             this.txtbxExercise = new System.Windows.Forms.TextBox();
             this.lblExercise = new System.Windows.Forms.Label();
-            this.lblMark = new System.Windows.Forms.Label();
-            this.cmbxMark = new System.Windows.Forms.ComboBox();
             this.pnlButtons.SuspendLayout();
             this.grbxLaboratories.SuspendLayout();
             this.grbxCourseWork.SuspendLayout();
@@ -91,7 +91,7 @@
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnSave);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 324);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 320);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(493, 36);
             this.pnlButtons.TabIndex = 4;
@@ -183,58 +183,72 @@
             // 
             // grbxCourseWork
             // 
-            this.grbxCourseWork.Controls.Add(this.lblMark);
-            this.grbxCourseWork.Controls.Add(this.cmbxMark);
-            this.grbxCourseWork.Controls.Add(this.lblAutoMark);
-            this.grbxCourseWork.Controls.Add(this.cmbxAutoMark);
-            this.grbxCourseWork.Controls.Add(this.lblMaxMark);
-            this.grbxCourseWork.Controls.Add(this.cmbxMaxMark);
+            this.grbxCourseWork.Controls.Add(this.lblCourseWorkMark);
+            this.grbxCourseWork.Controls.Add(this.cmbxCourseWorkMark);
             this.grbxCourseWork.Controls.Add(this.txtbxCourseWorkBall);
             this.grbxCourseWork.Controls.Add(this.lblCourseWorkBall);
             this.grbxCourseWork.Controls.Add(this.chbxViewMark1);
             this.grbxCourseWork.Controls.Add(this.chbxViewMark2);
             this.grbxCourseWork.Location = new System.Drawing.Point(145, 64);
             this.grbxCourseWork.Name = "grbxCourseWork";
-            this.grbxCourseWork.Size = new System.Drawing.Size(209, 154);
+            this.grbxCourseWork.Size = new System.Drawing.Size(209, 105);
             this.grbxCourseWork.TabIndex = 11;
             this.grbxCourseWork.TabStop = false;
             this.grbxCourseWork.Text = "Курсовая работа";
             // 
+            // lblMark
+            // 
+            this.lblMark.Location = new System.Drawing.Point(124, 198);
+            this.lblMark.Name = "lblMark";
+            this.lblMark.Size = new System.Drawing.Size(127, 21);
+            this.lblMark.TabIndex = 17;
+            this.lblMark.Text = "Оценка за экзамен";
+            this.lblMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbxMark
+            // 
+            this.cmbxMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxMark.FormattingEnabled = true;
+            this.cmbxMark.Location = new System.Drawing.Point(252, 198);
+            this.cmbxMark.Name = "cmbxMark";
+            this.cmbxMark.Size = new System.Drawing.Size(57, 21);
+            this.cmbxMark.TabIndex = 16;
+            // 
             // lblAutoMark
             // 
-            this.lblAutoMark.Location = new System.Drawing.Point(3, 104);
+            this.lblAutoMark.Location = new System.Drawing.Point(124, 175);
             this.lblAutoMark.Name = "lblAutoMark";
             this.lblAutoMark.Size = new System.Drawing.Size(127, 21);
             this.lblAutoMark.TabIndex = 15;
-            this.lblAutoMark.Text = "Автомат";
+            this.lblAutoMark.Text = "Автомат за экзамен";
             this.lblAutoMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbxAutoMark
             // 
             this.cmbxAutoMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxAutoMark.FormattingEnabled = true;
-            this.cmbxAutoMark.Location = new System.Drawing.Point(131, 104);
+            this.cmbxAutoMark.Location = new System.Drawing.Point(252, 175);
             this.cmbxAutoMark.Name = "cmbxAutoMark";
             this.cmbxAutoMark.Size = new System.Drawing.Size(57, 21);
             this.cmbxAutoMark.TabIndex = 14;
             // 
-            // lblMaxMark
+            // lblCourseWorkMark
             // 
-            this.lblMaxMark.Location = new System.Drawing.Point(3, 80);
-            this.lblMaxMark.Name = "lblMaxMark";
-            this.lblMaxMark.Size = new System.Drawing.Size(127, 21);
-            this.lblMaxMark.TabIndex = 13;
-            this.lblMaxMark.Text = "Максимальная оценка";
-            this.lblMaxMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCourseWorkMark.Location = new System.Drawing.Point(3, 80);
+            this.lblCourseWorkMark.Name = "lblCourseWorkMark";
+            this.lblCourseWorkMark.Size = new System.Drawing.Size(127, 21);
+            this.lblCourseWorkMark.TabIndex = 13;
+            this.lblCourseWorkMark.Text = "Оенка";
+            this.lblCourseWorkMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cmbxMaxMark
+            // cmbxCourseWorkMark
             // 
-            this.cmbxMaxMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxMaxMark.FormattingEnabled = true;
-            this.cmbxMaxMark.Location = new System.Drawing.Point(131, 80);
-            this.cmbxMaxMark.Name = "cmbxMaxMark";
-            this.cmbxMaxMark.Size = new System.Drawing.Size(57, 21);
-            this.cmbxMaxMark.TabIndex = 12;
+            this.cmbxCourseWorkMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxCourseWorkMark.FormattingEnabled = true;
+            this.cmbxCourseWorkMark.Location = new System.Drawing.Point(131, 80);
+            this.cmbxCourseWorkMark.Name = "cmbxCourseWorkMark";
+            this.cmbxCourseWorkMark.Size = new System.Drawing.Size(57, 21);
+            this.cmbxCourseWorkMark.TabIndex = 12;
             // 
             // txtbxCourseWorkBall
             // 
@@ -289,7 +303,7 @@
             this.pnlPhoto.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlPhoto.Location = new System.Drawing.Point(359, 0);
             this.pnlPhoto.Name = "pnlPhoto";
-            this.pnlPhoto.Size = new System.Drawing.Size(134, 224);
+            this.pnlPhoto.Size = new System.Drawing.Size(134, 220);
             this.pnlPhoto.TabIndex = 17;
             // 
             // pctrbxPhoto
@@ -300,7 +314,7 @@
             this.pctrbxPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctrbxPhoto.Location = new System.Drawing.Point(0, 25);
             this.pctrbxPhoto.Name = "pctrbxPhoto";
-            this.pctrbxPhoto.Size = new System.Drawing.Size(132, 197);
+            this.pctrbxPhoto.Size = new System.Drawing.Size(132, 193);
             this.pctrbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctrbxPhoto.TabIndex = 2;
             this.pctrbxPhoto.TabStop = false;
@@ -343,7 +357,7 @@
             this.pnlExercise.Controls.Add(this.txtbxExercise);
             this.pnlExercise.Controls.Add(this.lblExercise);
             this.pnlExercise.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlExercise.Location = new System.Drawing.Point(0, 224);
+            this.pnlExercise.Location = new System.Drawing.Point(0, 220);
             this.pnlExercise.Name = "pnlExercise";
             this.pnlExercise.Padding = new System.Windows.Forms.Padding(2);
             this.pnlExercise.Size = new System.Drawing.Size(493, 100);
@@ -368,33 +382,19 @@
             this.lblExercise.TabIndex = 0;
             this.lblExercise.Text = "Задание на защиту";
             // 
-            // lblMark
-            // 
-            this.lblMark.Location = new System.Drawing.Point(3, 127);
-            this.lblMark.Name = "lblMark";
-            this.lblMark.Size = new System.Drawing.Size(127, 21);
-            this.lblMark.TabIndex = 17;
-            this.lblMark.Text = "Финальная оценка";
-            this.lblMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbxMark
-            // 
-            this.cmbxMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxMark.FormattingEnabled = true;
-            this.cmbxMark.Location = new System.Drawing.Point(131, 127);
-            this.cmbxMark.Name = "cmbxMark";
-            this.cmbxMark.Size = new System.Drawing.Size(57, 21);
-            this.cmbxMark.TabIndex = 16;
-            // 
             // FormStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(493, 360);
+            this.ClientSize = new System.Drawing.Size(493, 356);
+            this.Controls.Add(this.lblMark);
             this.Controls.Add(this.pnlPhoto);
+            this.Controls.Add(this.cmbxMark);
+            this.Controls.Add(this.lblAutoMark);
             this.Controls.Add(this.chbxAllLaboratoriesPassed);
+            this.Controls.Add(this.cmbxAutoMark);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cmbxStatus);
             this.Controls.Add(this.grbxCourseWork);
@@ -445,8 +445,8 @@
         private System.Windows.Forms.Label lblCourseWorkBall;
         private System.Windows.Forms.Label lblAutoMark;
         private System.Windows.Forms.ComboBox cmbxAutoMark;
-        private System.Windows.Forms.Label lblMaxMark;
-        private System.Windows.Forms.ComboBox cmbxMaxMark;
+        private System.Windows.Forms.Label lblCourseWorkMark;
+        private System.Windows.Forms.ComboBox cmbxCourseWorkMark;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cmbxStatus;
         private System.Windows.Forms.CheckBox chbxAllLaboratoriesPassed;

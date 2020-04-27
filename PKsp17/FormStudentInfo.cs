@@ -25,7 +25,7 @@ namespace PKsp17
 
             #region Заполнение комбобоксов с оценками
             Marks[] marks = (Marks[])Enum.GetValues(typeof(Marks));
-            this.cmbxMaxMark.DataSource = marks.Where(c => c != Marks.None).ToList();
+            this.cmbxCourseWorkMark.DataSource = marks.Where(c => c != Marks.None).ToList();
             this.cmbxAutoMark.DataSource = marks.ToList();
             this.cmbxMark.DataSource = marks.ToList();
             #endregion
@@ -56,9 +56,9 @@ namespace PKsp17
             this.chbxViewMark1.Checked = this.Student.ViewMark1;
             this.chbxViewMark2.Checked = this.Student.ViewMark2;
             this.txtbxCourseWorkBall.Text = this.Student.CourseWorkBall.ToString();
-            this.cmbxMaxMark.SelectedItem = this.Student.MaxCourseWorkMark;
-            this.cmbxAutoMark.SelectedItem = this.Student.AutoCourseWorkMark;
-            this.cmbxMark.SelectedItem = this.Student.CourseWorkMark;
+            this.cmbxCourseWorkMark.SelectedItem = this.Student.CourseWorkMark;
+            this.cmbxAutoMark.SelectedItem = this.Student.AutoExamMark;
+            this.cmbxMark.SelectedItem = this.Student.ExamMark;
 
             this.txtbxExercise.Text = this.Student.Exercise;
         }
@@ -73,7 +73,7 @@ namespace PKsp17
             if (string.IsNullOrWhiteSpace(this.txtbxName.Text)) { message += "Не указано ФИО\n"; }
             if (string.IsNullOrWhiteSpace(this.txtbxLaboratoriesMark.Text)) { message += "Не указан балл за лабы\n"; }
             if (string.IsNullOrWhiteSpace(this.txtbxCourseWorkBall.Text)) { message += "Не указан балл за КР\n"; }
-            if ((Marks)this.cmbxMaxMark.SelectedItem == Marks.None) { message += "Не указана максимальная оценка\n"; }
+            if ((Marks)this.cmbxCourseWorkMark.SelectedItem == Marks.None) { message += "Не указана максимальная оценка\n"; }
             if (this.cmbxStatus.SelectedValue == null) { message += "Не указан статус\n"; }
 
             if (!string.IsNullOrWhiteSpace(message))
@@ -93,9 +93,9 @@ namespace PKsp17
             this.Student.ViewMark1 = this.chbxViewMark1.Checked;
             this.Student.ViewMark2 = this.chbxViewMark2.Checked;
             this.Student.CourseWorkBall = Convert.ToInt32(this.txtbxCourseWorkBall.Text);
-            this.Student.MaxCourseWorkMark = (Marks)this.cmbxMaxMark.SelectedItem;
-            this.Student.AutoCourseWorkMark = (Marks)this.cmbxAutoMark.SelectedItem;
-            this.Student.CourseWorkMark = (Marks)this.cmbxMark.SelectedItem;
+            this.Student.CourseWorkMark = (Marks)this.cmbxCourseWorkMark.SelectedItem;
+            this.Student.AutoExamMark = (Marks)this.cmbxAutoMark.SelectedItem;
+            this.Student.ExamMark = (Marks)this.cmbxMark.SelectedItem;
 
             this.Student.Exercise = this.txtbxExercise.Text.Replace("\r\n", " ").Replace("\n", " ");
 

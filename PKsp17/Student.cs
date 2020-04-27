@@ -54,19 +54,19 @@ namespace PKsp17
         public int CourseWorkBall { get; set; }
 
         /// <summary>
-        /// Максимальная оценка за КР
-        /// </summary>
-        public Marks MaxCourseWorkMark { get; set; }
-
-        /// <summary>
-        /// Автомат за КР
-        /// </summary>
-        public Marks AutoCourseWorkMark { get; set; }
-
-        /// <summary>
         /// Оценка за КР
         /// </summary>
         public Marks CourseWorkMark { get; set; }
+
+        /// <summary>
+        /// Автомат за экзамен
+        /// </summary>
+        public Marks AutoExamMark { get; set; }
+
+        /// <summary>
+        /// Оценка за экзамен
+        /// </summary>
+        public Marks ExamMark { get; set; }
 
         /// <summary>
         /// Должник или молодец???
@@ -134,8 +134,9 @@ namespace PKsp17
             this.TimelyLaboratories = false;
             this.AllLaboratoriesPassed = false;
             this.CourseWorkBall = 0;
-            this.MaxCourseWorkMark = Marks.None;
-            this.AutoCourseWorkMark = Marks.None;
+            this.CourseWorkMark = Marks.None;
+            this.AutoExamMark = Marks.None;
+            this.ExamMark = Marks.None;
             this.Status = Statuses.Debetor;
             this.Exercise = "";
 
@@ -193,7 +194,7 @@ namespace PKsp17
                 int n = 0;
                 if (int.TryParse(items[7], out n))
                 {
-                    this.MaxCourseWorkMark = (Marks)n;
+                    this.CourseWorkMark = (Marks)n;
                 }
             }
             if (items.Length > 8)
@@ -203,12 +204,12 @@ namespace PKsp17
                     int n = 0;
                     if (int.TryParse(items[8], out n))
                     {
-                        this.AutoCourseWorkMark = (Marks)n;
+                        this.AutoExamMark = (Marks)n;
                     }
                 }
                 else
                 {
-                    this.AutoCourseWorkMark = Marks.None;
+                    this.AutoExamMark = Marks.None;
                 }
             }
             if (items.Length > 9)
@@ -230,12 +231,12 @@ namespace PKsp17
                     int n = 0;
                     if (int.TryParse(items[11], out n))
                     {
-                        this.CourseWorkMark = (Marks)n;
+                        this.ExamMark = (Marks)n;
                     }
                 }
                 else
                 {
-                    this.CourseWorkMark = Marks.None;
+                    this.ExamMark = Marks.None;
                 }
             }
             if (items.Length > 12) { this._photoString = items[12]; }
@@ -265,11 +266,11 @@ namespace PKsp17
                 this.LaboratoriesMark,
                 Convert.ToInt32(this.TimelyLaboratories),
                 this.CourseWorkBall,
-                (int)this.MaxCourseWorkMark,
-                this.AutoCourseWorkMark == Marks.None ? "" : ((int)this.AutoCourseWorkMark).ToString(),
+                (int)this.CourseWorkMark,
+                this.AutoExamMark == Marks.None ? "" : ((int)this.AutoExamMark).ToString(),
                 (int)this.Status,
                 Convert.ToInt32(this.AllLaboratoriesPassed),
-                this.CourseWorkMark == Marks.None ? "" : ((int)this.CourseWorkMark).ToString(),
+                this.ExamMark == Marks.None ? "" : ((int)this.ExamMark).ToString(),
                 this._photoString ?? "",
                 this.Exercise
             );
